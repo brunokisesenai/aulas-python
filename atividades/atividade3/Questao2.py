@@ -3,7 +3,12 @@
 
 total_macas = int(input("Digite o total de maçãs colhidas no dia: "))
 numero_caixas = int(total_macas / 12)
-macas_sobra = total_macas - (numero_caixas * 12)
 
+#Opção de solução 1:
+#macas_sobra = total_macas - (numero_caixas * 12)
+#print("Sobraram" , macas_sobra, "maçãs fora da caixa")
+
+#Opção de solução 2:
+macas_sobra = int(total_macas % 12)
 print("Número de caixas:" , numero_caixas)
 print("Sobraram" , macas_sobra, "maçãs fora da caixa")
