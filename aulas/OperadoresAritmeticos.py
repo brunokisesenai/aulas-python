@@ -13,7 +13,9 @@ multiplicacao = numero1 * numero2
 
 #DIVISÃO
 divisao = numero1 / numero2
+divisao_sem_numero_quebrado = numero1 // numero2
 resto = numero1 % numero2
+
 
 print("Soma dos números: ", soma)
 print("Subtração dos números: ", subtracao)
