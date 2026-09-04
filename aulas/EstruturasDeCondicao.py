@@ -20,7 +20,7 @@
 #    print("Acesso negado")
 
 
-#ELIF
+#ELIF - else + if
 
 print("Menores de idade e idosos não podem entrar!")
 idade = int(input("Digite sua idade: "))
