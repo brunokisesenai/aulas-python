@@ -48,7 +48,7 @@
 
 
 
-#MATCH CASE / SWITCH CASE:
+#MATCH CASE / SWITCH CASE: compara váriáveis ou valores com outros valores
 
 #print("1 + 1 é igual a:\na)1\nb)2\nc)3\nd)4\ne)5")
 
