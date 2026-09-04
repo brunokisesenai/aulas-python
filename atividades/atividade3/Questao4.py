@@ -6,6 +6,8 @@ nota2 = float(input("Digite sua segunda nota: "))
 media = (nota1 + nota2) / 2
 horas = float(input("Digite a quantidade de horas de aula assistidas: "))
 frequencia = int((100 * horas) / 200)
+
+print("A média do aluno foi:", media)
 print("A frequência do aluno foi de:", frequencia, "%")
 
 aprovado = media >= 6.0 and frequencia >= 75
