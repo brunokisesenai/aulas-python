@@ -9,7 +9,7 @@
    !decisao = False
 
 
-   COMPARAÇÃO
+   COMPARAÇÃO - OPERADORES DE COMPARAÇÃO
    esperar uma resposta de True ou False
 
    !=  -> se for diferente retorna True; se for igual retorna False
@@ -27,7 +27,7 @@
 
    <=  -> se for menor e igual retorna True; se for maior retorna False
 
-   PARA MAIS COMPARAÇÕES
+   PARA MAIS COMPARAÇÕES - OPERADORES LÓGICOS
    and  -> se todas as comparações forem True, retorna True
    idade = 18
    idade == 18 and idade >18  -> False
