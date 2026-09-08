@@ -1,4 +1,7 @@
 # REPETIÇÃO WHILE  ->  Enquanto
+# ESTRUTURAS DE REPETIÇÃO
+# LAÇOS DE REPETIÇÃO
+# LOOP
 
 #EXEMPLO 1: NÃO RODAR, POIS TRAVA O PROGRAMA!!!
 #ano_nascimento = 2004
@@ -30,9 +33,53 @@
 
 "-------------------------------------------------------------------------"
 
-seu_nome = input("Digite seu nome: ")
+#seu_nome = input("Digite seu nome: ")
 
-while seu_nome != "Bruno":
-    print("Pessoa não encontrada..")
-    seu_nome = input("Digite seu nome novamente: ")
-print("Bem vindo, Bruno")
+#while seu_nome != "Bruno":
+#    print("Pessoa não encontrada..")
+#    seu_nome = input("Digite seu nome novamente: ")
+#print("Bem vindo, Bruno!")
+
+"----------------------------------------------------------------------------"
+
+#tentativas = 3
+#while True:
+#        print(f"Você tem {tentativas} tentativas.")
+#        opcao = input("Escolha uma opção: ")
+
+#        if opcao == "b":
+#             print("Você ganhou!")
+#             break
+
+#        elif tentativas == 1:
+#            print("Você perdeu!")
+#            break
+
+#        else:
+#            tentativas -= 1
+
+
+"------------------------------------------------------------------------------"
+
+tentativas = 3
+fichas = 1
+while fichas != 0: #sistea da maquina do fliperama
+    print(f"Você tem  {fichas}, quantidade de fichas")
+    while True: #sistea do jogo do fliperama
+        print(f"Você tem {tentativas} tentativas.")
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == "b":
+             print("Você ganhou!")
+             break
+
+        elif tentativas == 1:
+            print("Você perdeu!")
+            break
+
+        else:
+            tentativas -= 1
+
+    fichas -=1
+    if fichas <= 0:
+        break
