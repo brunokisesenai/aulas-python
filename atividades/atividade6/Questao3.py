@@ -8,7 +8,7 @@ while numero != 0:
 
     soma += numero
     numero = int(input("Digite seu numero: "))
-    print(soma)
+
 
 
 print("A soma do números digitados é: ", soma)
