@@ -1,10 +1,13 @@
 # QUESTÃO 3
 
-numero = int(input("Digite seu numero: "))
+print("Somatório")
+soma = 0
+numero = int(input("Digite seu numero (se digitar '0' a contagem terminará): "))
 
 while numero != 0:
-    a = int(input("Digite seu numero: "))
-    soma = int(numero + a)
+
+    soma += numero
+    numero = int(input("Digite seu numero: "))
     print(soma)
 
 
