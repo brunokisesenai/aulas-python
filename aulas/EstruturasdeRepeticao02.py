@@ -63,12 +63,58 @@
 
 #FUNÇÕES DE LISTAS
 
-list_numeros = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
+#list_numeros = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
 
 #debug mode
-for numero in list_numeros:  #breakpoint
-    if numero == 3:
-        list_numeros.remove(3)
+#for numero in list_numeros:  #breakpoint
+#    if numero == 3:
+#        list_numeros.remove(3)
 
-print(list_numeros)
+#print(list_numeros)
+
+"---------------------------------------------------------------------------------------"
+print("ADICIONANDO ALUNOS NA LISTA DE CHAMADA")
+
+lista_alunos = []
+num_aluno = 0
+num_aluno_final = 0
+
+while True:
+    while True:
+        aluno = input("Digite o nome do aluno: ")
+        lista_alunos.append(aluno)
+
+        opcao = input("Deseja continuar? [S/N]: ")
+        if opcao == "N":
+            break
+
+    print("Lista atual dos alunos: ")
+    for i in lista_alunos:
+        print(f"Nome do aluno {num_aluno}: {i}")
+        num_aluno += 1
+
+    print("Escolha uma opção:")
+
+    opcao_match = input("a) apagar um aluno da chamada\nb) adicinar um aluno da chamada\nc) finalizar o programa\n")
+
+    match opcao_match:
+        case 'a':
+            aluno_apagado = input("Digite o nome do aluno que deseja apagar: ")
+            lista_alunos.remove(aluno_apagado)
+            break
+        case 'b':
+            aluno_adicionado = input("Digite o nome do aluno que deseja adicionar: ")
+            lista_alunos.append(aluno_adicionado)
+            break
+        case _:
+            break
+
+
+print("A sua turma ficou com todos esses alunos:")
+for i in lista_alunos:
+    print(f"Nome do aluno {num_aluno_final}: {i}")
+    num_aluno_final += 1
+
+"---------------------------------------------------------------------------------------"
+
 
