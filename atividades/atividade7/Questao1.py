@@ -21,4 +21,22 @@ while True:
 
 print("A lista de funcionários é: ", lista_funcionarios)
 
+aumento = []
+
+for i in lista_funcionarios:
+    resposta = input(f"O funcionário {i} tem a aumento? [S/N] ")
+    if resposta == 'S':
+        aumento.append(i)
+
+demitido = []
+
+for i2 in lista_funcionarios:
+    resposta2 = input(f"O funcionário {i2} será demitido? [S/N] ")
+    if resposta2 == 'S':
+        demitido.append(i2)
+
+print(f"A lista de funcionários inicial é:\n {lista_funcionarios}")
+print(f"A lista de funcionários que terão aumento é:\n {aumento}")
+print(f"A lista de funcionários que serão demitidos é:\n {demitido}")
+
 
