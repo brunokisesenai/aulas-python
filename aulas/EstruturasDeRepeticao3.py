@@ -12,6 +12,14 @@ turma_python = [
     notas,   #1
     faltas   #2
 ]
+# Exemplo 1
+#for turma in turma_python:
+#    print(turma)
 
+# Exemplo 2
 for turma in turma_python:
-    print(turma)
+    if turma[0] in alunos:
+        print(turma) #mostra a lista dos alunos
+        print(turma[0]) #mostra o aluno0
+        print(turma[1]) #mostra o aluno1
+        print(turma[2]) #mostra o aluno2
