@@ -24,7 +24,7 @@ print("A lista de funcionários é: ", lista_funcionarios)
 aumento = []
 
 for i in lista_funcionarios:
-    resposta = input(f"O funcionário {i} tem a aumento? [S/N] ")
+    resposta = input(f"O funcionário {i} terá aumento? [S/N] ")
     if resposta == 'S':
         aumento.append(i)
 
