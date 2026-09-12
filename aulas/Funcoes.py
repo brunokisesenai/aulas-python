@@ -28,7 +28,7 @@ def subtracao():
     numero2 = int(input("Número 2: "))
     return print(numero1 - numero2)
 
-subtracao() #"invoca" a definição de subtracao
+#subtracao() #"invoca" a definição de subtracao
 
 "----------------------------------------------------------------"
 
