@@ -17,7 +17,7 @@ def soma():
     numero2 = int(input("Número 2: "))
     return print(numero1 + numero2)
 
-#soma() #"invoca" a definição de soma
+#soma() #"invoca" a definição de soma   ****** Se deixar a invocação, ela é incluída na definição
 
 "----------------------------------------------------------"
 
@@ -28,7 +28,7 @@ def subtracao():
     numero2 = int(input("Número 2: "))
     return print(numero1 - numero2)
 
-#subtracao() #"invoca" a definição de subtracao
+#subtracao() #"invoca" a definição de subtracao  ****** Se deixar a invocação, ela é incluída na definição
 
 "----------------------------------------------------------------"
 
@@ -42,7 +42,9 @@ def subtracao():
 
 "-------------------------------------------------------------------------"
 
-
+def olaUsuario(nome, idade):
+    print(f"Olá, {nome}.")
+    print(f"Sua idade é {idade} anos")
 
 
 
