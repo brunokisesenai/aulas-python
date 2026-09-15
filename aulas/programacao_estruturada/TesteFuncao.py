@@ -1,6 +1,6 @@
 #ARQUIVO TesteFuncao.py
 
-from aulas.Funcoes import soma, subtracao, olaUsuario
+from aulas.programacao_estruturada.Funcoes import soma, olaUsuario
 
 #Exemplo 1
 #soma()
