@@ -20,7 +20,7 @@ class Aluno:  # toda classe começa com letra maiúscula
 
     #METODO DE FORMATAÇÃO
     def __str__(self):
-        return print(self.nome, self.registro)
+        return print(self.nome, self.registro)  #define como vai sair o print
 
 
     def mostrarNomeAluno(self): #metodo que usa os valores de alguma instância
