@@ -32,7 +32,7 @@ class Pessoa:
         print(f"O {self.nome} tem {self.peso} kg")
 
     def met_altura(self):
-        print(f"O {self.nome} tem {self.altura} cm")
+        print(f"O {self.nome} tem {self.altura} m")
 
     def met_profissao(self):
         print(f"A profissão do {self.nome} é: {self.profissao}")
