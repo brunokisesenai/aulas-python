@@ -44,5 +44,48 @@ print(conta_banco.get_titular())
 
 
 
+class ContaBancariaCorreta:
+    def __init__(self, titular, saldo): # LÓGICA UTILIZADA NO PYTHON de GET e SET
+        self.titular = titular
+        self.__saldo = saldo  #private
+
+    @property  # anotation  ->  anotação
+    def saldo(self):  #funcionar como o GET
+        print("Acessando a informação do saldo...")
+        return self.__saldo
+
+    @saldo.setter   # criando um novo setter no metodo
+    # quando o usuário digitar objeto.saldo acessa o metodo
+    def saldo(self, novo_saldo):  #funciona como o SET
+        self.__saldo = novo_saldo
+
+    def sacar(self, valor_saque):
+        if valor_saque <= self.__saldo:
+            self.saldo -= valor_saque
+            print(f"Quantidade retirada: {valor_saque}")
+            print(f"Saldo restante: {self.saldo}")
+        else:
+            print("Saldo insuficiente!")
+
+
+
+usuario_banco_correto = ContaBancariaCorreta("Joao", 500)
+print(usuario_banco_correto.saldo())
+
+usuario_banco_correto.saldo = 5000
+print(usuario_banco_correto.saldo)
+print(usuario_banco_correto.__dict__)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
