@@ -1,7 +1,6 @@
 # Crie uma classe que tenha no mínimo 5 atributos, 1 construtor e 3 métodos convencionais.
 # Sua classe deve ser uma das opções abaixo:
 #Carro / Banco / Pessoa
-from aulas.programacao_estruturada.OperadoresLogicos import idade
 
 
 #Você escolhe quais atributos relacionar com o conceito da sua classe.
