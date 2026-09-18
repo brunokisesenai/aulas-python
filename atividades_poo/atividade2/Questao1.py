@@ -57,12 +57,12 @@ meu_produto = Produto("Notebook", 5000, 50)
 
 #REALIZAR VENDA
 #meu_produto.realizar_venda(10)
-#meu_produto.realizar_venda(100)
+#meu_produto.realizar_venda(999)
 
 #DESCONTO:
 #meu_produto.aplicar_desconto(90)
 
 #EXIBIR RESUMO:
-meu_produto.exibir_resumo(0)
+#meu_produto.exibir_resumo(0)
 
 
