@@ -1,42 +1,34 @@
 #  QUESTÃO 1
 
 class Produto:
+
+#CONSTRUTOR:
     def __init__(self, nome, preco, quantidade_estoque):
         self.__nome = nome
         self.__preco = preco
         self.__quantidade_estoque = quantidade_estoque
 
 
-    @property
-    def nome(self):
-        return self.__nome
-    def preco(self):
-        return self.__preco
-    def quantidade_estoque(self):
-        return self.__quantidade_estoque
+
+#MÉTODOS:
+
+    def adicionar_estoque(self, quantidade):
+        if quantidade > 0:
+            self.__quantidade_estoque += quantidade
+        else:
+            print("Erro: quantidade inválida!")
 
 
-    @quantidade_estoque.setter
-    def quantidade_estoque(self, nova_quantidade_estoque):
-        if nova_quantidade_estoque <= 0:
-            print(f"Não é possível estoque negativo!")
+    def realizar_venda(self, venda):
+        if venda <= self.__quantidade_estoque:
+            self.__quantidade_estoque -= venda
+            print(f'Quantidade retirada: {venda}')
+            print(f'Estoque restante: {self.__quantidade_estoque()}')
+        else:
+            print(f'Estoque atual: {self.__quantidade_estoque()}')
+            print(f"Estoque {venda}")
+            print("Estoque insuficiente")
 
-
-
-
-
-
-
-    def adicionar_estoque(self, __quantidade_estoque):
-        estoque_adicionado = int(input("Digite a quantidade de produtos a serem adicionados: "))
-        estoque = estoque_adicionado + __quantidade_estoque
-        print(f"Foram adicionados {estoque_adicionado} unidades do produto ao estoque. O saldo atual é de {estoque} unidades.")
-
-
-    def realizar_venda(self, __quantidade_estoque):
-        venda = int(input("Digite a quantidade de produtos vendidos: "))
-        estoque_venda = __quantidade_estoque - venda
-        print(f"Foram vendidos {estoque_venda} unidades do produto. O saldo atual é de {estoque_venda} unidades.")
 
 
     def aplicar_desconto(self, desconto, __preço):
@@ -50,10 +42,11 @@ class Produto:
         print(resumo)
 
 
-produto_dados = Produto("Notebook", "5000", 100)
-print(produto_dados.nome)
-print(produto_dados.preco)
-print(produto_dados.quantidade_estoque)
+
+meu_produto = Produto("Notebook", "5000", 50)
+print(meu_produto.__dict__)
+meu_produto.adicionar_estoque(-50)
+print(meu_produto.__dict__)
 
 
 
