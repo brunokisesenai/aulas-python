@@ -7,6 +7,25 @@ class Produto:
         self.__quantidade_estoque = quantidade_estoque
 
 
+    @property
+    def nome(self):
+        return self.__nome
+    def preco(self):
+        return self.__preco
+    def quantidade_estoque(self):
+        return self.__quantidade_estoque
+
+
+    @quantidade_estoque.setter
+    def quantidade_estoque(self, nova_quantidade_estoque):
+
+
+
+
+
+
+
+
     def adicionar_estoque(self, __quantidade_estoque):
         estoque_adicionado = int(input("Digite a quantidade de produtos a serem adicionados: "))
         estoque = estoque_adicionado + __quantidade_estoque
