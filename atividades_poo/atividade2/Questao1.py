@@ -18,7 +18,8 @@ class Produto:
 
     @quantidade_estoque.setter
     def quantidade_estoque(self, nova_quantidade_estoque):
-
+        if nova_quantidade_estoque <= 0:
+            print(f"Não é possível estoque negativo!")
 
 
 
