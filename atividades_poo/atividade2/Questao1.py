@@ -31,7 +31,7 @@ class Produto:
 
     def aplicar_desconto(self, desconto):
         if desconto > 0 and desconto <= 80:
-            self.__preco *= (desconto/100)
+            self.__preco *= (1-(desconto/100))
             print(f"O valor final do produto com desconto de {desconto} %, foi de R$ {self.__preco}")
         else:
             print(f"Erro: Desconto inválido!. Valor do produto: R$ {self.__preco}")
@@ -60,7 +60,7 @@ meu_produto = Produto("Notebook", 5000, 50)
 #meu_produto.realizar_venda(999)
 
 #DESCONTO:
-#meu_produto.aplicar_desconto(90)
+#meu_produto.aplicar_desconto(20)
 
 #EXIBIR RESUMO:
 #meu_produto.exibir_resumo(0)
