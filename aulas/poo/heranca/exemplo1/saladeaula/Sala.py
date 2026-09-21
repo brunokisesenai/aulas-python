@@ -1,4 +1,4 @@
-from aulas.poo.heranca.diretoria.Coordenacao import Coordenacao
+from aulas.poo.heranca.exemplo1.diretoria.Coordenacao import Coordenacao
 
 
 class Sala(Coordenacao):
