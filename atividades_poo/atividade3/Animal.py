@@ -47,7 +47,7 @@ class Animal:
         if porcao > 0:
             if self.__nivel_fome >= porcao:
                 self.__nivel_fome -= porcao
-                print(f"O nível da fome é: {self.__nivel_fome}!")
+                print(f"O {self.nome} foi alimentado e o nível da fome diminuiu para: {self.__nivel_fome}!")
             else:
                 print(f"Erro: Porção inválida!")
 
