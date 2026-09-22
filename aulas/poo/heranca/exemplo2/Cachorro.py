@@ -10,3 +10,6 @@ class Cachorro(Animal):
 
     def latir(self):
         print(f"O cachorro {self.nome} está latindo...")
+
+    def aniversario(self):
+        print(f"O cachorro está completando {self.idade} anos de idade")

@@ -11,5 +11,7 @@ class Gato(Animal):
         print(f"O gato {self.nome} cospiu pelo...")
 
 
+    def mostraIdadeDoGato(self):
+        print(self._tipo)
 
 
