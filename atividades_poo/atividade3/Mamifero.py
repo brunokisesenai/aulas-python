@@ -14,12 +14,15 @@ class Mamifero(Animal):
         self.nivel_fome += 20
         print(f"O {self.nome} correu {self._velocidade_kmh} kmh. O nível da fome subiu para {self.nivel_fome} pontos!")
 
-
     def emitir_som(self):
         print(f"O {self.nome} ruge alto!")
 
     def exibir_resumo(self):
+        super().exibir_resumo()
         print(f"A velocidade do {self.nome} é {self._velocidade_kmh} kmh.")
+
+
+
 
 mamifero1 = Mamifero("Cachorro", 10, 50, 30)
 mamifero1.correr()

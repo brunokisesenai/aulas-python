@@ -19,7 +19,9 @@ class Ave(Animal):
         print(f"O {self.nome} canta um som melodioso!")
 
     def exibir_resumo(self):
+        super().exibir_resumo()
         print(f"A envergadura das asas é de {self._envergadura_asas} cm.")
+
 
 
 
