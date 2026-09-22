@@ -23,9 +23,16 @@ class Mamifero(Animal):
 
 
 
+#TESTE 1
+leao = Mamifero("Simba", 5, 70, 80)
+leao.correr()
+leao.emitir_som()
+leao.exibir_resumo()
+leao.alimentar(50)
+leao.alimentar(-1000)
 
-mamifero1 = Mamifero("Cachorro", 10, 50, 30)
-mamifero1.correr()
-mamifero1.emitir_som()
-mamifero1.exibir_resumo()
-mamifero1.alimentar(50)
+#TESTE 2
+leao._nivel_fome = -999
+leao._idade = -10
+leao.exibir_resumo()
+

@@ -25,10 +25,11 @@ class Ave(Animal):
 
 
 
-ave1 = Ave("Canário", 10, 50, 80)
+gaviao = Ave("Sky", 2, 75, 120)
 
-ave1.voar()
-ave1.emitir_som()
-ave1.exibir_resumo()
-ave1.alimentar(50)
+gaviao.voar()
+gaviao.voar()
+gaviao.emitir_som()
+gaviao.exibir_resumo()
+gaviao.alimentar(50)
 
