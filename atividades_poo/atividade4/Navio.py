@@ -6,7 +6,7 @@ class Navio(CalculoDeFrete):
     def iniciando(self):
         print(f"O valor da taxa será calculado baseado na distância e peso")
 
-    def calcular_taxa(self, distancia, valor, prazo):
+    def calcular_frete(self, distancia, valor, prazo):
         print(f"O Valor da taxa do navio é de R$ {valor} por km")
         self.distancia = distancia
         self.valor = self.distancia * 20
@@ -17,4 +17,4 @@ class Navio(CalculoDeFrete):
 
 taxa = Navio()
 taxa.iniciando()
-taxa.calcular_taxa(50, 100, 70)
+taxa.calcular_frete(50, 100, 70)

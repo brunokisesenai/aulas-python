@@ -5,6 +5,6 @@ from Navio import Navio
 class Main:
     print("TESTES")
 
-frete = Caminhao()
-frete.iniciando()
-frete.calcular_frete(50, 100, 30)
+caminhao = Caminhao()
+caminhao.calcular_frete(50, 20, 30)
+caminhao.parada(50, 20, 7)

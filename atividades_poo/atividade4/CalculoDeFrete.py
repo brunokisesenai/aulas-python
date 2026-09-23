@@ -7,4 +7,4 @@ class CalculoDeFrete(ABC):
         pass
 
     def calcular_tempo(self, prazo):
-        print(f"O prazo de entrega é de {prazo} dias. ")
+        print(f"O prazo de entrega é de {prazo} horas. ")
