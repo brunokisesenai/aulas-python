@@ -8,7 +8,6 @@ class Mamifero(Animal):
         self._velocidade_kmh = velocidade_kmh
 
 
-
     def correr(self):
         print(f"O nível inicial da fome é {self.nivel_fome}.")
         self.nivel_fome += 20
