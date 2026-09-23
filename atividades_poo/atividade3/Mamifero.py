@@ -22,17 +22,3 @@ class Mamifero(Animal):
         print(f"A velocidade do {self.nome} é {self._velocidade_kmh} kmh.")
 
 
-
-#TESTE 1
-leao = Mamifero("Simba", 5, 70, 80)
-leao.correr()
-leao.emitir_som()
-leao.exibir_resumo()
-leao.alimentar(50)
-leao.alimentar(-1000)
-
-#TESTE 2
-leao._nivel_fome = -999
-leao._idade = -10
-leao.exibir_resumo()
-

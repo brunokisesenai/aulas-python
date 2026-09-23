@@ -49,7 +49,7 @@ class Animal:
                 self.__nivel_fome -= porcao
                 print(f"O {self.nome} foi alimentado e o nível da fome diminuiu para: {self.__nivel_fome}!")
         else:
-            print(f"Erro: Porção inválida!")
+                print(f"Erro: Porção inválida!")
 
     def emitir_som(self):
         print(f"O {self.__nome} faz um som genérico!")

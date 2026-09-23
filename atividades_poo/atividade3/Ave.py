@@ -25,11 +25,5 @@ class Ave(Animal):
 
 
 
-gaviao = Ave("Sky", 2, 75, 120)
 
-gaviao.voar()
-gaviao.voar()
-gaviao.emitir_som()
-gaviao.exibir_resumo()
-gaviao.alimentar(50)
 
