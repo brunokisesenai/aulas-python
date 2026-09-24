@@ -3,7 +3,7 @@
 from abc import ABC, abstractmethod
 class CalculoDeFrete(ABC):
     @abstractmethod
-    def calcular_frete(self, distancia, valor, prazo):
+    def calcular_frete(self, distancia, valor, prazo, peso):
         pass
 
     def calcular_tempo(self, prazo):
