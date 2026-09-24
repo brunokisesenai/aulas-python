@@ -6,11 +6,11 @@ class Carro:
         self.motor = Motor(motor)  #instanciando a classe
 
     def acelerar(self):
-        print("Carro acelerou")
+        print(f"O carro {self.__modelo} acelerou")
 
     def quebrar(self):
-        print("Carro quebrou")
-        self.estado_motor = "quebrado"
+        print(f"Carro {self.__modelo} quebrou")
+        self.motor.estado_motor = "quebrado"
 
 
 class Motor:
@@ -19,12 +19,16 @@ class Motor:
         self.__estado_motor = "funcionando"
 
     @property
-    def estado_motor(self, value):
-        self.__estado_motor = value
+    def tipo_motor(self):
+        return self.__tipo_motor
+
+    @property
+    def estado_motor(self):
+        return self.__estado_motor
 
 
     @estado_motor.setter
-    def estado_motor(self, tipo_motor, value):
+    def estado_motor(self, value):
         self.__tipo_motor = value
 
 
