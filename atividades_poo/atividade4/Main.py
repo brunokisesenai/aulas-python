@@ -26,5 +26,15 @@ print("-----------------TESTES FINAIS---------------------")
 # objeto_generico = CalculoDeFrete()
 
 # 2. Instanciando as Classes Filhas
-obj1 = Caminhao()
-obj2 = Navio()
+caminhao1 = Caminhao()
+caminhao2 = Caminhao()
+caminhao3 = Caminhao()
+lote_caminhao = [caminhao1, caminhao2, caminhao3]
+
+print("\n--- INICIANDO PROCESSAMENTO EM LOTE ---")
+
+for item in lote:
+    caminhao.calcular_frete(50, 100, 70, 200)
+    # Chama o método que era abstrato, mas agora está implementado
+    item.metodo_abstrato(argumento1, argumento2)
+    print("-" * 30)
