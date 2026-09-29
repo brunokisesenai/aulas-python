@@ -1,56 +1,157 @@
+
 class ItemPedido:
+
     def __init__(self, descricao, valor):
-        self.descricao = str(descricao)
-        self.valor = float(valor)
+        self.descricao = descricao
+
+        try:
+            self.valor = float(valor)
+
+        except ValueError:
+            raise ValueError(f"Erro: O valor para '{descricao}' deve ser estritamente numérico.")
 
 
 
 class Mesa:
-    def __init__(self):
+
+    def __init__(self, numero_mesa):
+        self.numero_mesa = numero_mesa
         self.pedidos = []
 
-    def adicionar_pedido(self, pedido):
-       self.pedidos.append(pedido)
+    def adicionar_pedido(self, item):
+        self.pedidos.append(item)
+        print(f"-> {item.descricao} adicionado à {self.numero_mesa}.")
 
 
-    def listar_pedidos(self):
-        for pedido in self.pedidos:
-            print(pedido.descricao)
-        try:
-            for item in self.pedidos:
-                print(item.descricao, item.valor)
-        except Exception as erro:
-                print(f"Erro inesperado: {erro}")
-        finally:
-                print("Finalizando execução do método")
+    def somar_total(self):
+
+        total = 0
+
+        for item in self.pedidos:
+            total += item.valor
+        return total
 
 
-    def somar_pedido(self):
+    def fechar_conta(self, taxa_servico):
 
-        for pedido in self.pedidos:
-            pedido.valor += pedido.valor
-            print(f"O valor da conta foi de R$ {pedido.valor}")
+        print(f"\n========== EXTRATO - {self.numero_mesa} ==========")
+
+        if len(self.pedidos) == 0:
+            print("Nenhum pedido registrado.")
+            print("Subtotal: R$ 0.00")
+            print("Taxa de serviço: R$ 0.00")
+            print("TOTAL A PAGAR: R$ 0.00")
+            print("==========================================")
+            return
+
+        print("Itens consumidos:")
+
+        for item in self.pedidos:
+            print(f"- {item.descricao}: R$ {item.valor:.2f}")
+
+        # Calcula o subtotal
+        subtotal = self.somar_total()
+
+        # Calcula o valor da taxa de serviço
+        valor_taxa = subtotal * (taxa_servico / 100)
+
+        # Calcula o total final
+        total_final = subtotal + valor_taxa
+
+        print("------------------------------------------")
+        print(f"Subtotal: R$ {subtotal:.2f}")
+        print(
+            f"Taxa de serviço ({taxa_servico}%): "
+            f"R$ {valor_taxa:.2f}"
+        )
+        print(f"TOTAL A PAGAR: R$ {total_final:.2f}")
+        print("==========================================")
+
+        # Limpa a lista de pedidos após o fechamento
+        self.pedidos.clear()
+
+        print(f"{self.numero_mesa} liberada para novos clientes.")
 
 
+# ============================================================
+# FUNÇÃO AUXILIAR
+# ============================================================
+
+def registrar_pedido_seguro(mesa, descricao, valor):
+
+    try:
+        # Tenta criar o item
+        item = ItemPedido(descricao, valor)
+
+        # Se não houver erro, adiciona o item à mesa
+        mesa.adicionar_pedido(item)
+
+    except ValueError as erro:
+        # Captura o erro sem interromper o programa
+        print(f"ALERTA DO SISTEMA: {erro}")
 
 
-pedido1 = ItemPedido(descricao="Macarrão", valor=30)
-pedido2 = ItemPedido(descricao="Sushi", valor=80)
-pedido3 = ItemPedido(descricao="Picanha", valor=100)
+# ============================================================
+# TESTES
+# ============================================================
 
-mesa1 = Mesa()
-mesa1.adicionar_pedido(pedido1)
-mesa1.adicionar_pedido(pedido2)
-mesa1.listar_pedidos()
-mesa1.somar_pedido()
+# 1. Instanciando a mesa
+
+mesa1 = Mesa("Mesa 1")
 
 
+# 2. Registrando pedidos válidos
 
-mesa2 = Mesa()
-mesa2.adicionar_pedido(pedido1)
-mesa2.adicionar_pedido(pedido3)
-mesa2.listar_pedidos()
-mesa2.somar_pedido()
+registrar_pedido_seguro(
+    mesa1,
+    "Pizza Margherita",
+    45.90
+)
 
+registrar_pedido_seguro(
+    mesa1,
+    "Refrigerante",
+    8.50
+)
+
+
+# 3. Testando o Tratamento de Exceções
+
+print("\n--- TESTANDO ENTRADA INVÁLIDA ---")
+
+registrar_pedido_seguro(
+    mesa1,
+    "Pudim",
+    "quinze"
+)
+
+registrar_pedido_seguro(
+    mesa1,
+    "Café",
+    "5,50"
+)
+
+
+# 4. Adicionando outro pedido válido após os erros
+
+registrar_pedido_seguro(
+    mesa1,
+    "Suco de Laranja",
+    12.00
+)
+
+
+# 5. Fechando a conta com 10% de taxa
+
+print("\n--- FECHAMENTO DA CONTA ---")
+
+mesa1.fechar_conta(taxa_servico=10)
+
+
+# 6. Verificando se a mesa foi limpa
+
+print("\n--- VERIFICANDO STATUS DA MESA APÓS FECHAMENTO ---")
+
+mesa1.fechar_conta(taxa_servico=10)
 
 
