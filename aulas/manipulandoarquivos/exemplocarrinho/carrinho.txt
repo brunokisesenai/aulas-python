@@ -1,0 +1,6 @@
+RECIBO DO CARRINHO
+
+Produto: a: R$ 3.00
+Produto: b: R$ 4.00
+Produto: c: R$ 5.00
+Total a pagar: 12.00
