@@ -1,0 +1,6 @@
+LISTA DE COMPRAS
+
+Produto: 1: R$ 1.00
+Produto: feijão: R$ 2.00
+Produto: leite: R$ 3.00
+Total a pagar: 6.00
