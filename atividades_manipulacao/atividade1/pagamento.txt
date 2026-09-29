@@ -1,8 +1,11 @@
 LISTA DE COMPRAS
 
-Cliente: Arroz
+Cliente: Bruno
 
 Produto: Arroz: R$ 10.00
+
 Produto: Feijão: R$ 9.00
+
 Produto: Pão: R$ 1.00
+
 Compra processada com sucesso! Valor cobrado: R$20.00
