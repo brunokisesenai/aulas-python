@@ -22,6 +22,8 @@ while True:
 
     pagamento.append([nome,preco])
 
+print("\n--- FINALIZANDO COMPRA ---")
+
 with open("pagamento.txt", "w", encoding='utf-8') as arquivo:
     arquivo.write("LISTA DE COMPRAS\n\n"
                   f"Cliente: {cliente}\n\n")
@@ -38,6 +40,7 @@ with open("pagamento.txt", "w", encoding='utf-8') as arquivo:
 
     arquivo.write(f"Compra processada com sucesso! Valor cobrado: R${total:.2f}\n")
 
+print("\n--- PROCESSANDO PAGAMENTO ---")
 
 with open("pagamento.txt", 'r', encoding='utf-8') as arquivo:
     texto = arquivo.read()
