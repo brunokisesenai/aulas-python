@@ -1,6 +1,8 @@
 LISTA DE COMPRAS
 
-Produto: 1: R$ 1.00
-Produto: feijão: R$ 2.00
-Produto: leite: R$ 3.00
-Total a pagar: 6.00
+Cliente: Arroz
+
+Produto: Arroz: R$ 10.00
+Produto: Feijão: R$ 9.00
+Produto: Pão: R$ 1.00
+Compra processada com sucesso! Valor cobrado: R$20.00

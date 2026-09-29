@@ -1,7 +1,7 @@
 #RESPOSTA DA ATIVIDADE
 
-nome = str(input("Digite o nome do usuário/cliente: "))
-print(f"O nome do cliente é {nome}.")
+cliente = str(input("Digite o nome do usuário/cliente: "))
+print(f"O nome do cliente é {cliente}.")
 print("LISTA DE COMPRAS")
 
 lista_de_compras = []
@@ -23,7 +23,8 @@ while True:
     lista_de_compras.append([nome,preco])
 
 with open("lista_de_compras.txt", "w", encoding='utf-8') as arquivo:
-    arquivo.write("LISTA DE COMPRAS\n\n")
+    arquivo.write("LISTA DE COMPRAS\n\n"
+                  f"Cliente: {cliente}\n\n")
 
 
 
@@ -35,10 +36,15 @@ with open("lista_de_compras.txt", "w", encoding='utf-8') as arquivo:
         arquivo.write(f"Produto: {nome_produto}: R$ {preco_produto:.2f}\n")
 
 
-    arquivo.write(f"Total a pagar: R${total:.2f}\n")
+    arquivo.write(f"Compra processada com sucesso! Valor cobrado: R${total:.2f}\n")
 
 
-
+with open("lista_de_compras.txt", 'r', encoding='utf-8') as arquivo:
+    texto = arquivo.read()
+    posicao = texto.find("Compra")
+    print(posicao)
+    total_a_pagar = texto[posicao:posicao+53]
+    print(f"O total a pagar é R$ {total_a_pagar}.")
 
 
 
