@@ -1,40 +1,55 @@
-from CalculoDeFrete import CalculoDeFrete
+from Transporte import Transporte
 from Caminhao import Caminhao
-from Navio import Navio
-
-class Main:
-    print("TESTES")
-
-print("-----------------TESTES CAMINHÃO---------------------")
-caminhao = Caminhao()
-caminhao.calcular_frete(50, 20, 30, 100)
-caminhao.parada(50, 20, 7, 150)
+from Drone import Drone
 
 
+def processar_lote(lista_de_objetos, distancia, peso):
 
-print("-----------------TESTES NAVIO---------------------")
-taxa = Navio()
-taxa.iniciando()
-taxa.calcular_frete(50, 100, 70, 200)
-taxa.descarregar(50, 100, 70, 100)
-taxa.calcular_frete(50, 100, 70, 150)
+    for item in lista_de_objetos:
+        item.iniciar_processo()
+        item.calcular_frete(distancia, peso)
+        print("-" * 40)
 
-print("-----------------TESTES FINAIS---------------------")
 
-# 1. Tentativa de instanciar a Classe Abstrata (DEVE GERAR ERRO)
-# Descomente a linha abaixo para testar e provar que o Python bloqueia:
-# objeto_generico = CalculoDeFrete()
+
+"--------------------TESTES--------------------"
+
+
+# 1. Tentativa de instanciar a Classe Abstrata
+# DEVE GERAR ERRO:
+#
+# transporte = Transporte()
+#
+# O Python não permite criar um objeto diretamente
+# de uma classe que possui métodos abstratos.
+
 
 # 2. Instanciando as Classes Filhas
-caminhao1 = Caminhao()
-caminhao2 = Caminhao()
-caminhao3 = Caminhao()
-lote_caminhao = [caminhao1, caminhao2, caminhao3]
+
+obj1 = Caminhao()
+obj2 = Drone()
+
+
+# 3. Criando um Lote de Processamento
+
+lote = [obj1, obj2, obj1]
+
+
+# 4. Processando em lote
+# Demonstrando Abstração e Polimorfismo
 
 print("\n--- INICIANDO PROCESSAMENTO EM LOTE ---")
 
-for item in lote:
-    caminhao.calcular_frete(50, 100, 70, 200)
-    # Chama o método que era abstrato, mas agora está implementado
-    item.metodo_abstrato(argumento1, argumento2)
-    print("-" * 30)
+processar_lote(lote, distancia=10, peso=1.5)
+
+
+# ============================================================
+# TESTE DA VALIDAÇÃO DO DRONE
+# ============================================================
+
+print("\n--- TESTANDO LIMITE DE PESO DO DRONE ---")
+
+drone = Drone()
+
+drone.iniciar_processo()
+drone.calcular_frete(distancia=10, peso=5)
