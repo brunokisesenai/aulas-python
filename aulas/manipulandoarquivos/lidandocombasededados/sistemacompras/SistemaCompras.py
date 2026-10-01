@@ -6,5 +6,12 @@ def cadastrar_venda():
     with open("vendas.txt", "a", encoding="utf-8") as arquivo:
         arquivo.write(f"{vendedor}; {produto}; {valor:.2f}\n")
 
+    print("Venda cadastrada")
 
+cadastrar_venda()
+
+
+def lista_vendas():
+    with open("vendas.txt", "r", encoding="utf-8") as arquivo:
+        linhas = arquivo.readlines()
 
