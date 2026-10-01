@@ -1,1 +1,4 @@
-Bruno; Caminhonete; 5000.00
+Bruno; iPhone; 5000.00
+Carlos; iPad; 8000.00
+João; Macbook; 10000.00
+João; carro; 50000.00
