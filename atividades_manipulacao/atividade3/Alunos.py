@@ -11,12 +11,12 @@ def cadastrar_aluno():
     nota4 = float(nota4)
     media = float((nota1 + nota2 + nota3 + nota4) / 4)
     if media >= 7:
-        status = "APROVADO"
+        status = "Aprovado"
     else:
-        status = "REPROVADO"
+        status = "Reprovado"
 
     with open("basededados.txt", "a", encoding="utf-8") as arquivo:
-        arquivo.write(f"{aluno}; {turma}; {nota1:.2f}; {nota2:.2f}; {nota3:.2f}; {nota4:.2f}; {status}\n")
+        arquivo.write(f"\n{aluno}; {turma}; {nota1:.2f}; {nota2:.2f}; {nota3:.2f}; {nota4:.2f}; {status}")
 
 
     print(f"A média final do(a) {aluno} foi {media}. O(a) aluno(a) foi {status}!")
@@ -80,27 +80,36 @@ def procurar_status():
 
 def mostrar_maior_media():
     with open("basededados.txt", "r", encoding="utf-8") as arquivo:
-        linhas = arquivo.readlines()
         lista_media = []
-
-        for linha in linhas:
-            linha = linha.strip().split(";")
-            lista_media.append(float(linha[6]))
+        lista_alunos = arquivo.readlines()
+        for aluno in lista_alunos:
+            aluno = aluno.strip().split(";")
+            aluno[3] = float(aluno[3])
+            aluno[4] = float(aluno[4])
+            aluno[5] = float(aluno[5])
+            aluno[2] = float(aluno[2])
+            media = ((aluno[3] + aluno[4] + aluno[5] + aluno[2]) / 4)
+            lista_media.append(float(media))
 
         maior_media = max(lista_media)
 
-        print(f"A maior média foi: {maior_media}")
+
+        print(f"A maior média foi: {maior_media}!")
 
 
 
 def mostrar_menor_media():
     with open("basededados.txt", "r", encoding="utf-8") as arquivo:
-        linhas = arquivo.readlines()
         lista_media = []
-
-        for linha in linhas:
-            linha = linha.strip().split(";")
-            lista_media.append(float(linha[6]))
+        lista_alunos = arquivo.readlines()
+        for aluno in lista_alunos:
+            aluno = aluno.strip().split(";")
+            aluno[3] = float(aluno[3])
+            aluno[4] = float(aluno[4])
+            aluno[5] = float(aluno[5])
+            aluno[2] = float(aluno[2])
+            media = ((aluno[3] + aluno[4] + aluno[5] + aluno[2]) / 4)
+            lista_media.append(float(media))
 
         menor_media = min(lista_media)
 
@@ -112,7 +121,7 @@ def mostrar_menor_media():
 
 while True:
     finalizar = False
-    print("==========SISTEMA DE NOTAS==========\n")
+    print("\n==========SISTEMA DE NOTAS==========\n")
     opcao = int(input("Escolha uma das opções:\n"
                   "1) Cadastrar novo aluno\n"
                   "2) Calcular média\n"
@@ -130,9 +139,9 @@ while True:
         case 3:
             procurar_status()
         case 4:
-            print(mostrar_maior_media())
+            mostrar_maior_media()
         case 5:
-            print(mostrar_menor_media())
+            mostrar_menor_media()
         case 6:
             lista_nomes_alunos()
         case _:
