@@ -22,7 +22,7 @@ def cadastrar_aluno():
     print(f"A média final do(a) {aluno} foi {media}. O(a) aluno(a) foi {status}!")
     print(f"Aluno(a) cadastrado(a)!")
 
-cadastrar_aluno()
+
 
 
 
@@ -50,8 +50,8 @@ def calcular_media():
             media = ((aluno[3] + aluno[4] + aluno[5] + aluno[2]) / 4 )
             if nome_busca == aluno[0]:
                 print(f'A média do(a) aluno(a) {aluno[0]} foi: {media}')
-            else:
-                print(f'Aluno não encontrado!')
+            #else:
+            #    print(f'Aluno não encontrado!')
 
 
 
@@ -73,8 +73,8 @@ def procurar_status():
                 status = "REPROVADO"
             if nome_busca == aluno[0]:
                 print(f'O status do(a) aluno(a) {aluno[0]} é: {status}!')
-            else:
-                print(f'Aluno não encontrado!')
+            #else:
+            #    print(f'Aluno não encontrado!')
 
 
 
@@ -112,7 +112,7 @@ def mostrar_menor_media():
 
 while True:
     finalizar = False
-    print("\n\n\n==========SISTEMA DE NOTAS==========\n\n")
+    print("==========SISTEMA DE NOTAS==========\n")
     opcao = int(input("Escolha uma das opções:\n"
                   "1) Cadastrar novo aluno\n"
                   "2) Calcular média\n"
