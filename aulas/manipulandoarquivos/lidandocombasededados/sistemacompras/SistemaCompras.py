@@ -48,15 +48,32 @@ def achar_vendedor():
             if linha[0] == "João":
                 print(f"O João fez a venda de um{linha[1]}")
 
-def modificar_venda():
+def maior_venda():
     with open("vendas.txt", "r", encoding="utf-8") as arquivo:
         linhas = arquivo.readlines()
+        valores_venda = []
+
         for linha in linhas:
             linha = linha.strip().split(";")
-            if linha[0] == "João" and float(linha[2]) == 600000:
-                linha[1] == "Mansão"
+            valores_venda.append(float(linha[2]))
+
+        maior_valor = max(valores_venda)
+
+        print(f"O maior valor de venda: {maior_valor}")
 
 
+def menor_venda():
+    with open("vendas.txt", "r", encoding="utf-8") as arquivo:
+        linhas = arquivo.readlines()
+        valores_venda = []
+
+        for linha in linhas:
+            linha = linha.strip().split(";")
+            valores_venda.append(float(linha[2]))
+
+        menor_valor = min(valores_venda)
+
+        print(f"O menor valor de venda: {menor_valor}")
 
 
 
@@ -73,8 +90,9 @@ while True:
                   "2) Listar todas as vendas\n"
                   "3) Somar todas as vendas\n"
                   "4) Ver as vendas de um vendedor\n"    
-                  "5) Modificar venda\n"
-                  "6) Finalizar programa\n"))
+                  "5) Maior venda\n"
+                  "6) Menor venda\n"
+                  "7) Finalizar programa\n"))
 
     match opcao:
         case 1:
@@ -86,7 +104,9 @@ while True:
         case 4:
             print(achar_vendedor())
         case 5:
-            print(modificar_venda())
+            print(maior_venda())
+        case 6:
+            print(menor_venda())
         case _:
             print("Finalizando programa...")
             finalizar = True
