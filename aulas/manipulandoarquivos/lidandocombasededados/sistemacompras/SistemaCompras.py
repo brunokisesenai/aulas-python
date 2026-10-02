@@ -59,7 +59,7 @@ def maior_venda():
 
         maior_valor = max(valores_venda)
 
-        print(f"O maior valor de venda: {maior_valor}")
+        print(f"O maior valor de venda: R${maior_valor}")
 
 
 def menor_venda():
@@ -73,7 +73,7 @@ def menor_venda():
 
         menor_valor = min(valores_venda)
 
-        print(f"O menor valor de venda: {menor_valor}")
+        print(f"O menor valor de venda: R${menor_valor}")
 
 
 

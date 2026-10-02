@@ -2,3 +2,7 @@ Bruno; iPhone; 5000.00
 Carlos; iPad; 8000.00
 João; Macbook; 10000.00
 João; carro; 50000.00
+Daniel; Casa; 40000.00
+Carlos; 4000; 1.00
+Thiago; Mansão; 50000000.00
+Talya; chinelo; 1.00
