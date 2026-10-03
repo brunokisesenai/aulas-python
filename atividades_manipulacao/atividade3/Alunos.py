@@ -99,6 +99,7 @@ def mostrar_maior_media():
 
 
 def mostrar_menor_media():
+    turma_digitada = input("Digite a tuma do aluno: ")
     with open("basededados.txt", "r", encoding="utf-8") as arquivo:
         lista_media = []
         lista_alunos = arquivo.readlines()
@@ -108,12 +109,17 @@ def mostrar_menor_media():
             aluno[4] = float(aluno[4])
             aluno[5] = float(aluno[5])
             aluno[2] = float(aluno[2])
-            media = ((aluno[3] + aluno[4] + aluno[5] + aluno[2]) / 4)
-            lista_media.append(float(media))
+            if aluno[1] == turma_digitada:
+                media = ((aluno[3] + aluno[4] + aluno[5] + aluno[2]) / 4)
+                nome_aluno = aluno[0]
+                media_aluno = media
+                lista_media.append(float(media))
+
+
 
         menor_media = min(lista_media)
 
-        print(f"A menor média foi: {menor_media}")
+        print(f"A menor média foi: {menor_media} do aluno {lista_alunos[0]}!")
 
 
 
