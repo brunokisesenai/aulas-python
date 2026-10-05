@@ -78,48 +78,51 @@ def procurar_status():
 
 
 
-def mostrar_maior_media():
-    with open("basededados.txt", "r", encoding="utf-8") as arquivo:
-        lista_media = []
+def maior_media():
+    turma_digitada = input('Digite o turma do aluno: ')
+    with open('basededados.txt.txt', 'r', encoding='utf-8') as arquivo:
         lista_alunos = arquivo.readlines()
+        lista_media_alunos = []
+        aluno_destaque = []
+        maior_media = 0
+
         for aluno in lista_alunos:
-            aluno = aluno.strip().split(";")
-            aluno[3] = float(aluno[3])
-            aluno[4] = float(aluno[4])
-            aluno[5] = float(aluno[5])
-            aluno[2] = float(aluno[2])
-            media = ((aluno[3] + aluno[4] + aluno[5] + aluno[2]) / 4)
-            lista_media.append(float(media))
+            aluno = aluno.strip().split(';')
+            if aluno[1] == turma_digitada:
+                media = (float(aluno[2]) + float(aluno[3]) + float(aluno[4]) + float(aluno[5])) / 4
+                nome = aluno[0]
+                lista_media_alunos.append([nome, media])
 
-        maior_media = max(lista_media)
+                if media > maior_media:
+                    maior_media = media
+                    aluno_destaque.append(aluno[0])
+                    aluno_destaque.append(media)
 
-
-        print(f"A maior média foi: {maior_media}!")
+        print(f"A maior maior media foi o aluno {aluno_destaque[2]} com a média {aluno_destaque[3]}")
 
 
 
 def mostrar_menor_media():
-    turma_digitada = input("Digite a tuma do aluno: ")
-    with open("basededados.txt", "r", encoding="utf-8") as arquivo:
-        lista_media = []
+    turma_digitada = input('Digite o turma do aluno: ')
+    with open('basededados.txt.txt', 'r', encoding='utf-8') as arquivo:
         lista_alunos = arquivo.readlines()
+        lista_media_alunos = []
+        aluno_destaque = []
+        menor_media = 10
+
         for aluno in lista_alunos:
-            aluno = aluno.strip().split(";")
-            aluno[3] = float(aluno[3])
-            aluno[4] = float(aluno[4])
-            aluno[5] = float(aluno[5])
-            aluno[2] = float(aluno[2])
+            aluno = aluno.strip().split(';')
             if aluno[1] == turma_digitada:
-                media = ((aluno[3] + aluno[4] + aluno[5] + aluno[2]) / 4)
-                nome_aluno = aluno[0]
-                media_aluno = media
-                lista_media.append(float(media))
+                media = (float(aluno[2]) + float(aluno[3]) + float(aluno[4]) + float(aluno[5])) / 4
+                nome = aluno[0]
+                lista_media_alunos.append([nome, media])
 
+                if media < menor_media:
+                    menor_media = media
+                    aluno_destaque.append(aluno[0])
+                    aluno_destaque.append(media)
 
-
-        menor_media = min(lista_media)
-
-        print(f"A menor média foi: {menor_media} do aluno {lista_alunos[0]}!")
+        print(f"A menor media foi o aluno {aluno_destaque[2]} com a média {aluno_destaque[3]}")
 
 
 
