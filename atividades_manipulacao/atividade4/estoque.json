@@ -1,0 +1,22 @@
+[
+    {
+        "nome": "Frango",
+        "preco": 20.0,
+        "quantidade": 10
+    },
+    {
+        "nome": "Carne",
+        "preco": 45.0,
+        "quantidade": 30
+    },
+    {
+        "nome": "Arroz",
+        "preco": 16.0,
+        "quantidade": 20
+    },
+    {
+        "nome": "Sushi",
+        "preco": 100.0,
+        "quantidade": 15
+    }
+]
