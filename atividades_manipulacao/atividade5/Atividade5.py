@@ -1,7 +1,7 @@
 
 import json
 
-# ETAPA 1 - LENDO O ARQUIVO TXT LEGADO
+# ETAPA 1 - LENDO O ARQUIVO TXT
 
 catalogo_livros = []
 
@@ -9,7 +9,6 @@ with open("banco_livros.txt", "r", encoding="utf-8") as arquivo:
     for linha in arquivo:
         linha = linha.strip()
 
-        # Ignora linhas vazias
         if linha:
             dados = linha.split(";")
 
@@ -102,7 +101,7 @@ with open("catalogo.json", "r", encoding="utf-8") as arquivo:
 
 
 print("=====LIVROS COM MENOS DE 15 UNIDADES EM ESTOQUE:=====")
-print("-" * 50)
+print(f"\n")
 
 for livro in catalogo:
     if livro["em_estoque"] < 15:
