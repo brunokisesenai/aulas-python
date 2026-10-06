@@ -10,5 +10,13 @@ dados_dicionario = {
     'em_estoque': True
 }
 
-json_string = json.dumps(dados_dicionario)
+
+
+json_string = json.dumps(dados_dicionario, ensure_ascii=False, indent=1)
 print(json_string)
+
+texto_json = '{"produto": "carne", "preço": 50.00, "em_estoque": true}'
+
+novo_dicionario = json.loads(texto_json)
+
+print(novo_dicionario)
