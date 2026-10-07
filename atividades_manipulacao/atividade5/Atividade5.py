@@ -114,7 +114,6 @@ for livro in catalogo:
 
 # Valor total do estoque
 
-
 valor_total_estoque = 0
 
 for livro in catalogo:
