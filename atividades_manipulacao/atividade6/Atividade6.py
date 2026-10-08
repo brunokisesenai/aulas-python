@@ -1,122 +1,64 @@
 import json
 
-lista_funcionarios = []
+# Leitura da base 1
+with open("base1.json", "r", encoding="utf-8") as arquivo:
+    dados1 = json.load(arquivo)
+
+# Leitura da base 2
+with open("base2.json", "r", encoding="utf-8") as arquivo:
+    dados2 = json.load(arquivo)
+
+# Leitura da base 3
+with open("base3.json", "r", encoding="utf-8") as arquivo:
+    dados3 = json.load(arquivo)
 
 
-#---------------------------------------------------
-#LENDO BASE 1:
-#---------------------------------------------------
-
-with open('base1.json', 'r', encoding='utf-8') as arquivo:
-    lista_funcionarios = json.load(arquivo)
-    linha = []
-    for linha in arquivo:
-        lista_funcionarios = {
-            "nome": linha[0],
-            "aniversário": linha[1],
-            "cargo": linha[2],
-            "salário": float(linha[3]),
-
-        }
-
-        lista_funcionarios.append(linha)
+# Lista que irá armazenar os aniversariantes
+lista_aniversariantes = []
 
 
-    for linha in arquivo:
-        lista_aniversariante = []
-        aniversariante = {
-            "nome": linha[0],
-            "aniversário": linha[1],
+# Processamento da base 1
+for funcionario in dados1:
+    novo_funcionario = {
+        "nome": funcionario["nome"],
+        "aniversario": funcionario["aniversario"]
+    }
 
-        }
-        lista_aniversariante.append(aniversariante)
-
-
-print(f"Lista de Funcionários Base1 {json.dumps(lista_funcionarios, indent=1)}")
+    lista_aniversariantes.append(novo_funcionario)
 
 
+# Processamento da base 2
+for funcionario in dados2:
+    novo_funcionario = {
+        "nome": funcionario["nome"],
+        "aniversario": funcionario["aniversario"]
+    }
+
+    lista_aniversariantes.append(novo_funcionario)
 
 
+# Processamento da base 3
+for funcionario in dados3:
+    novo_funcionario = {
+        "nome": funcionario["nome"],
+        "aniversario": funcionario["aniversario"]
+    }
 
-#---------------------------------------------------
-#LENDO BASE 2:
-#---------------------------------------------------
+    lista_aniversariantes.append(novo_funcionario)
 
-with open('base2.json', 'r', encoding='utf-8') as arquivo:
-    lista_funcionarios = json.load(arquivo)
-    linha = []
-    for linha in arquivo:
-        lista_funcionarios = {
-            "cargo": linha[0],
-            "setor": linha[1],
-            "empresa": linha[2],
-            "nome": linha[3],
-            "aniversário": linha[4],
 
-        }
+# Ordenação alfabética pelo nome
+lista_aniversariantes.sort(key=lambda funcionario: funcionario["nome"])
 
-        lista_funcionarios.append(linha)
 
-    for linha in arquivo:
-        lista_aniversariante = []
-        aniversariante = {
-            "nome": linha[3],
-            "aniversário": linha[4],
-
-        }
-        lista_aniversariante.append(aniversariante)
-
-print(f"Lista de Funcionários Base 2 {json.dumps(lista_funcionarios, indent=1)}")
+# Salvando o resultado no arquivo aniversariantes.json
+with open("aniversariantes.json", "w", encoding="utf-8") as arquivo:
+    json.dump(lista_aniversariantes, arquivo, ensure_ascii=False, indent=4)
 
 
 
-
-
-#---------------------------------------------------
-#LENDO BASE 3:
-#---------------------------------------------------
-
-with open('base3.json', 'r', encoding='utf-8') as arquivo:
-    lista_funcionarios = json.load(arquivo)
-    linha = []
-    for linha in arquivo:
-        lista_funcionarios = {
-            "nome": linha[0],
-            "cargo": linha[1],
-            "tempo de empresa": linha[3],
-            "aniversário": linha[4],
-
-        }
-
-        lista_funcionarios.append(linha)
-
-    for linha in arquivo:
-        lista_aniversariante = []
-        aniversariante = {
-            "nome": linha[0],
-            "aniversário": linha[4],
-
-        }
-        lista_aniversariante.append(aniversariante)
-
-
-print(f"Lista de Funcionários Base 3 {json.dumps(lista_funcionarios, indent=1)}")
-
-
-
-
-
-#---------------------------------------------------
-#CRIANDO LISTA DE ANIVERSÁRIO:
-#---------------------------------------------------
-
-lista_anversariantes = []
-
-aniversariante = {
-    "nome": "",
-    "aniversário": "",}
-
-with open("lista_aniversariantes.json", "w", encoding="utf-8") as arquivo:
-    json.dump(lista_funcionarios, arquivo, ensure_ascii=False, indent=4)
-
-print(lista_anversariantes)
+# Exibindo o total de registros processados
+print(
+    f"Total de registros processados com sucesso: "
+    f"{len(lista_aniversariantes)}"
+)
