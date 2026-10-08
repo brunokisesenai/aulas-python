@@ -46,6 +46,7 @@ dados_produtos.append(
 )
 
 
+
 with open('estoque.json', 'w', encoding='utf-8') as arquivo:
     json.dump(dados_produtos, arquivo, ensure_ascii=True, indent=4)
     print("\n\nLISTA DE PRODUTOS DA LOJA TECHSTORE ATUALIZADA!\n")
