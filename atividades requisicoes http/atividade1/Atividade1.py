@@ -22,7 +22,7 @@ while True:
     cep_digitado = input("Digite seu CEP ou 'fim para finalizar: ")
     if cep_digitado != "fim":
         link = f"https://viacep.com.br/ws/{cep_digitado}/json/"
-#link = "https://viacep.com.br/ws/01001000/json/"
+
 
 
 
@@ -55,4 +55,4 @@ while True:
         break
 
 with open("historico_pesquisa.json", "w", encoding="utf-8") as arquivo:
-    json.dump(resposta.json(), arquivo, ensure_ascii=False, indent=4)
+    json.dump(lista_cep, arquivo, ensure_ascii=False, indent=4)
