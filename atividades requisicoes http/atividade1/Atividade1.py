@@ -11,48 +11,45 @@
 
 
 import json
-
-import requests   # Módulo EXTERNO -> Faz requisições HTTP
-
+import requests
 
 lista_cep = []
 
 while True:
+    cep_digitado = input("Digite seu CEP ou 'fim' para finalizar: ")
 
-    cep_digitado = input("Digite seu CEP ou 'fim para finalizar: ")
-    if cep_digitado != "fim":
-        link = f"https://viacep.com.br/ws/{cep_digitado}/json/"
-
-
-
-
-        resposta = requests.get(link)   #tipos de resposta (200, 300, 400, etc.)
-
-        print(resposta.json())
-
-
-        for endereco in lista_cep:
-            endereco  = {
-                "cep": endereco['cep'],
-                "logradouro": endereco['logradouro'],
-                "complemento": endereco['complemento'],
-                "unidade": endereco['unidade'],
-                "bairro": endereco['bairro'],
-                "localidade": endereco['localidade'],
-                "uf": endereco['uf'],
-                "estado": endereco['estado'],
-                "regiao": endereco['regiao'],
-                "ibge": endereco['ibge'],
-                "gia": endereco['gia'],
-                "ddd": endereco['ddd'],
-                "siafi": endereco['siafi'],
-            }
-
-            lista_cep.append(endereco)
-
-
-    else:
+    if cep_digitado.lower() == "fim":
         break
 
-with open("historico_pesquisa.json", "w", encoding="utf-8") as arquivo:
-    json.dump(lista_cep, arquivo, ensure_ascii=False, indent=4)
+    link = f"https://viacep.com.br/ws/{cep_digitado}/json/"
+
+    try:
+        resposta = requests.get(link)
+
+        endereco = resposta.json()
+
+        # Verifica se o CEP existe
+        if "erro" in endereco:
+            print("CEP não encontrado!")
+            continue
+
+        print(endereco)
+
+        # Adiciona o endereço à lista
+        lista_cep.append(endereco)
+
+        # Salva o histórico no arquivo JSON
+        with open("historico_pesquisa.json", "w", encoding="utf-8") as arquivo:
+            json.dump(
+                lista_cep,
+                arquivo,
+                ensure_ascii=False,
+                indent=4
+            )
+
+        print("Pesquisa salva no histórico!")
+
+    except requests.exceptions.RequestException as erro:
+        print(f"Erro na requisição: {erro}")
+
+print("Programa finalizado!")
