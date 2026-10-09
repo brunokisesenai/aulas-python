@@ -15,24 +15,44 @@ import json
 import requests   # Módulo EXTERNO -> Faz requisições HTTP
 
 
+lista_cep = []
 
+while True:
 
-cep_digitado = input("Digite seu CEP: ")
-
-link = f"https://viacep.com.br/ws/{cep_digitado}/json/"
+    cep_digitado = input("Digite seu CEP ou 'fim para finalizar: ")
+    if cep_digitado != "fim":
+        link = f"https://viacep.com.br/ws/{cep_digitado}/json/"
 #link = "https://viacep.com.br/ws/01001000/json/"
 
 
 
-resposta = requests.get(link)   #tipos de resposta (200, 300, 400, etc.)
+        resposta = requests.get(link)   #tipos de resposta (200, 300, 400, etc.)
 
-if resposta.status_code == 200:
-    print("Requisição feita com sucesso!")
-else:
-    print("Erro na requisição")
+        print(resposta.json())
 
 
-print(resposta.json())
+        for endereco in lista_cep:
+            endereco  = {
+                "cep": endereco['cep'],
+                "logradouro": endereco['logradouro'],
+                "complemento": endereco['complemento'],
+                "unidade": endereco['unidade'],
+                "bairro": endereco['bairro'],
+                "localidade": endereco['localidade'],
+                "uf": endereco['uf'],
+                "estado": endereco['estado'],
+                "regiao": endereco['regiao'],
+                "ibge": endereco['ibge'],
+                "gia": endereco['gia'],
+                "ddd": endereco['ddd'],
+                "siafi": endereco['siafi'],
+            }
+
+            lista_cep.append(endereco)
+
+
+    else:
+        break
 
 with open("historico_pesquisa.json", "w", encoding="utf-8") as arquivo:
     json.dump(resposta.json(), arquivo, ensure_ascii=False, indent=4)
