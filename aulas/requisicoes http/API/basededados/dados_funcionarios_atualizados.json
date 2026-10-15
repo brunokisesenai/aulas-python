@@ -2,7 +2,7 @@
     {
         "cargo": "Analista de Sistemas",
         "cep": "70730776",
-        "cidade": "Bras\u00edlia",
+        "cidade": "Brasília",
         "estado": "Distrito Federal",
         "id": 1,
         "nome": "Ana Souza",
@@ -10,7 +10,7 @@
         "tempoEmpresa": 3
     },
     {
-        "cargo": "T\u00e9cnico de Suporte",
+        "cargo": "Técnico de Suporte",
         "cep": "80010000",
         "cidade": "Curitiba",
         "estado": "PR",
@@ -42,7 +42,7 @@
     {
         "cargo": "Analista Financeiro",
         "cep": "70730776",
-        "cidade": "Bras\u00edlia",
+        "cidade": "Brasília",
         "estado": "Distrito Federal",
         "id": 5,
         "nome": "Karen Ribeiro",
@@ -52,7 +52,7 @@
     {
         "cargo": "Administrador de Banco de Dados",
         "cep": "65000000",
-        "cidade": "S\u00e3o Lu\u00eds",
+        "cidade": "São Luís",
         "estado": "MA",
         "id": 6,
         "nome": "Nicolas Pereira",
@@ -62,7 +62,7 @@
     {
         "cargo": "Product Owner",
         "cep": "70730776",
-        "cidade": "Bras\u00edlia",
+        "cidade": "Brasília",
         "estado": "Distrito Federal",
         "id": 7,
         "nome": "Olivia Barros",
@@ -71,9 +71,9 @@
     },
     {
         "cargo": "Desenvolvedor Front-end",
-        "cep": "12345678",
-        "cidade": null,
-        "estado": null,
+        "cep": "70730776",
+        "cidade": "Brasília",
+        "estado": "Distrito Federal",
         "id": 8,
         "nome": "Pedro Nunes",
         "salario": 4600.0,
@@ -82,7 +82,7 @@
     {
         "cargo": "QA Tester",
         "cep": "78000000",
-        "cidade": "Cuiab\u00e1",
+        "cidade": "Cuiabá",
         "estado": "MT",
         "id": 9,
         "nome": "Quezia Almeida",
@@ -92,7 +92,7 @@
     {
         "cargo": "Coordenador de TI",
         "cep": "66000000",
-        "cidade": "Bel\u00e9m",
+        "cidade": "Belém",
         "estado": "PA",
         "id": 10,
         "nome": "Thiago Moreira",

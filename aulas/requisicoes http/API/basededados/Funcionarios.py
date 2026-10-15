@@ -28,22 +28,25 @@ for funcionario in lista_funcionarios:
                     if chave == 'estado':
                         funcionario['estado'] = valor
                 funcionario['cep'] = cep_digitado
+            break
 
-            if funcionario['cidade'] == None:
-                print(f"O CEP digitado é inválido!")
-                cep_digitado = input("Digite o CEP dele: ")
-                link_cep = f"https://viacep.com.br/ws/{cep_digitado}/json/"
-                resposta = requests.get(link_cep)
-                print(resposta.status_code)
-                if resposta.status_code == 200:
-                    dicionario_funcionario = resposta.json()
-                    for chave, valor in dicionario_funcionario.items():
-                        if chave == 'localidade':
-                            funcionario['cidade'] = valor
-                        if chave == 'estado':
-                            funcionario['estado'] = valor
-                    funcionario['cep'] = cep_digitado
-                break
+
+    if funcionario['cidade'] == None:
+        print(f"O funcionário(a) {funcionario['nome']} não tem cep válido\n")
+        while True:
+            cep_digitado = input("Digite o CEP dele: ")
+            link_cep = f"https://viacep.com.br/ws/{cep_digitado}/json/"
+            resposta = requests.get(link_cep)
+            print(resposta.status_code)
+            if resposta.status_code == 200:
+                dicionario_funcionario = resposta.json()
+                for chave, valor in dicionario_funcionario.items():
+                    if chave == 'localidade':
+                        funcionario['cidade'] = valor
+                    if chave == 'estado':
+                        funcionario['estado'] = valor
+                funcionario['cep'] = cep_digitado
+            break
 
 for funcionario in lista_funcionarios:
     print(funcionario)
@@ -61,4 +64,4 @@ for funcionario in lista_funcionarios:
 
 
 with open('dados_funcionarios_atualizados.json', 'w', encoding='utf-8') as arquivo:
-    json.dump(lista_funcionarios, arquivo, ensure_ascii=True, indent=4)
+    json.dump(lista_funcionarios, arquivo, ensure_ascii=False, indent=4)
