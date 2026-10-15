@@ -28,7 +28,37 @@ for funcionario in lista_funcionarios:
                     if chave == 'estado':
                         funcionario['estado'] = valor
                 funcionario['cep'] = cep_digitado
+
+            if funcionario['cidade'] == None:
+                print(f"O CEP digitado é inválido!")
+                cep_digitado = input("Digite o CEP dele: ")
+                link_cep = f"https://viacep.com.br/ws/{cep_digitado}/json/"
+                resposta = requests.get(link_cep)
+                print(resposta.status_code)
+                if resposta.status_code == 200:
+                    dicionario_funcionario = resposta.json()
+                    for chave, valor in dicionario_funcionario.items():
+                        if chave == 'localidade':
+                            funcionario['cidade'] = valor
+                        if chave == 'estado':
+                            funcionario['estado'] = valor
+                    funcionario['cep'] = cep_digitado
                 break
 
 for funcionario in lista_funcionarios:
     print(funcionario)
+
+
+#ATIVIDADE:
+#INSERIOR DADOS ONDE ESTIVER ALGUM DADO VAZIO
+#NO CEP, APENAS ACEITAr CEPS VÁLIDOS (QUE TENHAM RETORNO DE CIDADE, ESTADO, ETC.)
+#SALVAR OS DADOS PREENCHIDOS EM UM ARQUIVO JSON (EX: dados_funcionarios_atualizados.json)
+
+
+
+
+
+
+
+with open('dados_funcionarios_atualizados.json', 'w', encoding='utf-8') as arquivo:
+    json.dump(lista_funcionarios, arquivo, ensure_ascii=True, indent=4)
