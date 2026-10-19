@@ -18,7 +18,7 @@ with open("dados_funcionarios_atualizados.json", "r", encoding='utf-8') as arqui
 
 
 
-        atualizacao = requests.put((f'http://192.168.205.100:8080/funcionarios'+str(id_funcionario)),
+        atualizacao = requests.put(f'http://192.168.205.100:8080/funcionarios'+str(id_funcionario),
                            json=novo_dicionario)
 
         id_funcionario += 1
