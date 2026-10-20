@@ -7,4 +7,5 @@ print(df)
 
 print("LENDO DADOS SLAVOS COM DICIONÁRIO")
 df = pd.read_csv("dados_do_dicionario.csv")
-print(df)
+#print(df)
+print(df[["nome", "idade"]])
