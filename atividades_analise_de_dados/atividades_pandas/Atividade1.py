@@ -7,10 +7,11 @@
 
 import pandas as pd
 
+print("=============== LISTA COMPLETA ==============")
 df = pd.read_csv("funcionarios.csv", sep=';')
 print(df)
 
-print("\n===== TODOS OS SALÁRIOS MENORES DO QUE 3.000, MAIORES DO QUE 5.000 E IGUAIS A 3.100 =====")
+print("\n======== TODOS OS SALÁRIOS MENORES DO QUE 3.000, MAIORES DO QUE 5.000 E IGUAIS A 3.100 =======")
 
 print(df[
           (df['salario'] < 3000) |
@@ -18,7 +19,7 @@ print(df[
           (df['salario'] == 3100)
       ])
 
-print("\n\n===== TODOS OS CARGOS DE ANALISTA DE DADOS, ANALISTA DE SISTEMAS, DESENVOLVEDOR JAVA E CIENTISTA DE DADOS =====")
+print("\n\n============== TODOS OS CARGOS DE ANALISTA DE DADOS, ANALISTA DE SISTEMAS, DESENVOLVEDOR JAVA E CIENTISTA DE DADOS ==============")
 
 print(df[
           (df['cargo'] == 'Analista de Dados') |
@@ -27,13 +28,13 @@ print(df[
           (df['cargo'] == 'Cientista de Dados')
       ])
 
-print("\n\n===== NOMES E CARGOS DE QUEM GANHA MAIS DO QUE 6.000 =====")
+print("\n\n============== NOMES E CARGOS DE QUEM GANHA MAIS DO QUE 6.000 ==============")
 
 print(df[
           (df['salario'] > 6000)
       ])
 
-print("\n\n===== FUNCIONÁRIOS COM ID PAR =====")
+print("\n\n============== FUNCIONÁRIOS COM ID PAR ==============")
 
 print(df[
           (df['id'] % 2 == 0)
