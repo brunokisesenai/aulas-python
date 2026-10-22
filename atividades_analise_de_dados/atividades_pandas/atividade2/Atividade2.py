@@ -14,10 +14,10 @@ df = pd.read_csv("funcionarios.csv",sep=";")
 # Salvar como arquivo CSV
 df.to_csv("cargos_altos.csv", index=False, sep=",", encoding="utf-8")
 
-print("Arquivo 'cargos_altos.csv' criado com sucesso!")
+print("\nArquivo 'cargos_altos.csv' criado com sucesso!")
 
 
-print("\n\n=============== CRIANDO 'CARGOS_ALTOS.CSV' COM SALÁRIOS ACIM ADE 6.000 ================")
+print("\n\n=============== CRIANDO 'CARGOS_ALTOS.CSV' COM SALÁRIOS ACIMA DE 6.000 ================")
 
 salario_alto = df[
     df['salario'] > 6000
@@ -25,7 +25,10 @@ salario_alto = df[
 
 print(salario_alto)
 
-salario_alto.to_csv('cargos_altos.csv', index=False, encoding='utf-8')
+
+salario_alto.to_csv('cargos_altos.csv', index=False, encoding='utf-8', sep=";")
+df_filtrado = pd.read_csv("cargos_altos.csv", sep=";")
+print(df_filtrado)
 
 
 
@@ -92,10 +95,14 @@ print("\nFuncionários removidos!")
 
 print("\n\n=============== ADICIONANDO NOVA COLUNA ================")
 
+df = pd.read_csv("cargos_altos.csv",sep=";")
 
-nova_lista = ['Tempo de Empresa']
+df['Tempo de Empresa'] = [10,10,12,13,14,15,16,17,18,20]
+print(df)
 
-df['Tempo de Empresa'] = nova_lista
+#nova_lista = ['Tempo de Empresa']
+
+#df['Tempo de Empresa'] = nova_lista
 
 
 
