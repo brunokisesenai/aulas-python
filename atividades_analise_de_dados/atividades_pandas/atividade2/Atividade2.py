@@ -1,5 +1,5 @@
 #Depois de completar a atividade 1... crie um arquivo 'cargos_altos.csv' que armazene uma base de dados nova.
-#Os dados slavos nesse novo arquivo deverão ser lidos do 'funcionarios.csv' com um filtro de funcionários com salário acima de 6000
+#Os dados sALvos nesse novo arquivo deverão ser lidos do 'funcionarios.csv' com um filtro de funcionários com salário acima de 6000
 #Adicioname mais 5 funcionários com id, nome, salario e cargos novos
 #Apague os 2 primeiros funcinoários com idex de 0 e 1 do arquivo
 #Adicione mais uma coluna na tabela com o nome de 'tempo_empresa' para armazenar em meses (int) o tempo que o funcionário está na empresa
@@ -9,7 +9,7 @@ import pandas as pd
 print("=============== CRIANDO ARQUIVO 'CARGOS_ALTOS.CSV' ================")
 
 # Criar um DataFrame vazio com as colunas
-df = pd.DataFrame(columns=["id", "Nome", "Salario", "Cargo"])
+df = pd.read_csv("funcionarios.csv",sep=";")
 
 # Salvar como arquivo CSV
 df.to_csv("cargos_altos.csv", index=False, sep=",", encoding="utf-8")
@@ -17,56 +17,89 @@ df.to_csv("cargos_altos.csv", index=False, sep=",", encoding="utf-8")
 print("Arquivo 'cargos_altos.csv' criado com sucesso!")
 
 
-print("\n\n=============== CRIANDO ARQUIVO 'CARGOS_ALTOS.CSV' ================")
+print("\n\n=============== CRIANDO 'CARGOS_ALTOS.CSV' COM SALÁRIOS ACIM ADE 6.000 ================")
 
-df = pd.read_csv("funcionarios.csv",sep=";")
-df = df.rename(columns={
-    'id': "identificador",
-    "nome": "funcionario"
-})
-# print(df[['funcionario', 'identificador']])
-novo_funcionario = [
-    {
-        'identificador': 31,
-        'funcionario': "João de Menezes",
-        'salario': 100000.0,
-        'cargo': "Instrutor SENAI"
-    }
+filtro_salario_cargo = df[
+    df['salario'] > 6000
 ]
 
-novo_funcionario = pd.DataFrame(novo_funcionario)
-mais_um_funcionario = pd.DataFrame([{
-    'identificador': 32,
-    'funcionario': "Victor Sousa",
+print(filtro_salario_cargo)
+
+filtro_salario_cargo.to_csv('cargos_altos.csv', index=False, encoding='utf-8')
+
+
+
+
+
+print("\n\n=============== ADICIONANDO 05 FUNCIONÁRIOS NOVOS ================")
+
+df = pd.read_csv("cargos_altos.csv",sep=";")
+
+
+funcionario31 = pd.DataFrame([{
+    'identificador': 31,
+    'funcionario': "Daniel Matos",
     'salario': 1000.0,
-    'cargo': "Interpret SENAI"
+    'cargo': "Programador Python"
 }])
 
-df = pd.concat([df, novo_funcionario, mais_um_funcionario], ignore_index=True)
-df = df.drop(df[df['identificador'] == 31].index)
+funcionario32 = pd.DataFrame([{
+    'identificador': 32,
+    'funcionario': "Mikhail Oliveira",
+    'salario': 7000.0,
+    'cargo': "Bancário"
+}])
 
-df.loc[df['identificador'] == 2, ["funcionario"]] = ["Bruno da Silva"]
-df.loc[df['identificador'] == 1, ["funcionario", "salario", "cargo"]] = [
-    "Ana Maria",10000.00, "CEO"
-]
-print(df)
+funcionario33 = pd.DataFrame([{
+    'identificador': 33,
+    'funcionario': "Alan Alvetti",
+    'salario': 50000.0,
+    'cargo': "Desenvolvedor Web"
+}])
+
+funcionario34 = pd.DataFrame([{
+    'identificador': 34,
+    'funcionario': "Talya Vogado",
+    'salario': 100000.0,
+    'cargo': "Publicitária"
+}])
+
+funcionario35 = pd.DataFrame([{
+    'identificador': 35,
+    'funcionario': "Bruno Kise",
+    'salario': 15000.0,
+    'cargo': "Desenvolvedor Python"
+}])
+
+
+df = pd.concat([df, funcionario31, funcionario32, funcionario33, funcionario34, funcionario35], ignore_index=True)
+df.to_csv("cargos_altos.csv",index=False)
+
+
+print("\nFuncionários adicionados com sucesso!")
+
+
+print("\n\n=============== REMOVENDO DOIS FUNCIONÁRIOS DO ARQUIVO 'FUNCIONARIOS.CSV' ================")
+
+df = pd.read_csv("funcionarios.csv",sep=";")
+
+df = df.drop(df[df['identificador'] == 0].index)
+df = df.drop(df[df['identificador'] == 1].index)
+
 df.to_csv("funcionarios.csv",sep=";",index=False)
 
+print("\nFuncionários removidos!")
+
+print("\n\n=============== ADICIONANDO NOVA COLUNA ================")
+
+
+nova_lista = ['Tempo de Empresa']
+
+df['Tempo de Empresa'] = nova_lista
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+df.to_csv('cargos_altos.csv', index=False, encoding='utf-8')
 
 
 

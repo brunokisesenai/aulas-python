@@ -1,5 +1,4 @@
 identificador;funcionario;salario;cargo
-1;Ana Maria;10000.0;CEO
 2;Bruno da Silva;5100.0;Desenvolvedor Java
 3;Carla Mendes;2800.0;Assistente Administrativo
 4;Diego Alves;4800.0;Desenvolvedor Python
@@ -29,4 +28,5 @@ identificador;funcionario;salario;cargo
 28;João Pedro Silva;6400.0;Cientista de Dados
 29;Larissa Campos;3300.0;Analista de Atendimento
 30;Marcelo Batista;6100.0;Líder Técnico
+32;Victor Sousa;1000.0;Interpret SENAI
 32;Victor Sousa;1000.0;Interpret SENAI
