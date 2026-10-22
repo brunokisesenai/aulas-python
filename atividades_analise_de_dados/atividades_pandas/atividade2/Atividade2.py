@@ -19,13 +19,13 @@ print("Arquivo 'cargos_altos.csv' criado com sucesso!")
 
 print("\n\n=============== CRIANDO 'CARGOS_ALTOS.CSV' COM SALÁRIOS ACIM ADE 6.000 ================")
 
-filtro_salario_cargo = df[
+salario_alto = df[
     df['salario'] > 6000
 ]
 
-print(filtro_salario_cargo)
+print(salario_alto)
 
-filtro_salario_cargo.to_csv('cargos_altos.csv', index=False, encoding='utf-8')
+salario_alto.to_csv('cargos_altos.csv', index=False, encoding='utf-8')
 
 
 
