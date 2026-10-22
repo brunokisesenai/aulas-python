@@ -1,11 +1,11 @@
-"identificador,funcionario,salario,cargo",Tempo de Empresa
-"6,Gabriel Martins,6200.0,Engenheiro de Software",10
-"14,Rafael Barros,6800.0,Gerente de Projetos",10
-"20,André Moreira,7200.0,Coordenador de TI",12
-"28,João Pedro Silva,6400.0,Cientista de Dados",13
-"30,Marcelo Batista,6100.0,Líder Técnico",14
-"31,Daniel Matos,1000.0,Programador Python",15
-"32,Mikhail Oliveira,7000.0,Bancário",16
-"33,Alan Alvetti,50000.0,Desenvolvedor Web",17
-"34,Talya Vogado,100000.0,Publicitária",18
-"35,Bruno Kise,15000.0,Desenvolvedor Python",20
+identificador,funcionario,salario,cargo;Tempo de Empresa
+6,Gabriel Martins,6200.0,Engenheiro de Software;10
+14,Rafael Barros,6800.0,Gerente de Projetos;10
+20,André Moreira,7200.0,Coordenador de TI;12
+28,João Pedro Silva,6400.0,Cientista de Dados;13
+30,Marcelo Batista,6100.0,Líder Técnico;14
+31,Daniel Matos,1000.0,Programador Python;15
+32,Mikhail Oliveira,7000.0,Bancário;16
+33,Alan Alvetti,50000.0,Desenvolvedor Web;17
+34,Talya Vogado,100000.0,Publicitária;18
+35,Bruno Kise,15000.0,Desenvolvedor Python;20

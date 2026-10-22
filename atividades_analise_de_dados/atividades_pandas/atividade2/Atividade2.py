@@ -98,6 +98,7 @@ print("\n\n=============== ADICIONANDO NOVA COLUNA ================")
 df = pd.read_csv("cargos_altos.csv",sep=";")
 
 df['Tempo de Empresa'] = [10,10,12,13,14,15,16,17,18,20]
+
 print(df)
 
 #nova_lista = ['Tempo de Empresa']
@@ -106,7 +107,13 @@ print(df)
 
 
 
-df.to_csv('cargos_altos.csv', index=False, encoding='utf-8')
+df.to_csv('cargos_altos.csv', index=False, encoding='utf-8', sep=";")
+
+
+
+
+
+
 
 
 
