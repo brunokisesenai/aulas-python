@@ -31,6 +31,7 @@ dados["cpf_formatado"] = (dados["cpf"]
                           .str.replace(" ", ""))
 
 
+
 print(dados)
 
 
