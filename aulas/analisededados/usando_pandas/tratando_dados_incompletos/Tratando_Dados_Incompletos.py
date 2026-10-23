@@ -25,16 +25,15 @@ dados = pd.read_csv('dados_incompletos.csv', dtype={'cpf': str})
 #print(dados["cpf"])
 
 
-dados["cpf_formatado"] = (dados["cpf"]
-                          .str.replace(".", "")
-                          .str.replace("-","")
-                          .str.replace(" ", ""))
+#dados["cpf_formatado"] = (dados["cpf"]
+#                          .str.replace(".", "")
+#                          .str.replace("-","")
+#                          .str.replace(" ", ""))
 
+#print(dados)
 
-
+dados["cpf_formatado"] = dados["cpf"].str.replace(r"\D", "", regex=True)
 print(dados)
-
-
 
 
 
