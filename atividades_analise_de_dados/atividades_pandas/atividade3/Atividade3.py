@@ -97,11 +97,6 @@ print(dados.to_string(index=False))
 
 print("\n\n============== ATUALIZANDO O ARQUIVO 'DADOS_PADRONIZADOS.CSV' ===============")
 
-df = pd.read_csv(
-    "dados_padronizados.csv",
-    sep=None,
-    engine="python",
-    dtype=str,
-    encoding="utf-8-sig")
-df.to_csv("dados_padronizados.csv",sep=";",index=False)
+dados.to_csv("dados_padronizados.csv", index=False)
 print("\nO arquivo foi atulizado com sucesso!")
+
