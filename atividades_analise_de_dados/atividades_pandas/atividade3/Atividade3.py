@@ -61,7 +61,7 @@ dados_numero_formatado = (
 
 dados.insert(5, "numero_formatado", dados_numero_formatado)
 #dados["numero_validado"] = (dados['numero_formatado'].str.fullmatch(r"\d{10,11}"))
-dados.insert(6, "numero_validado", dados["numero_formatado"].str.fullmatch(r"\d{11}"))
+dados.insert(6, "numero_validado", dados["numero_formatado"].str.fullmatch(r"\d{10,13}"))
 
 print(dados.to_string(index=False))
 
