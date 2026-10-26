@@ -53,29 +53,55 @@ dados.insert(3, "cpf_validado", dados["cpf_formatado"].str.fullmatch(r"\d{11}"))
 print(dados.to_string(index=False))
 
 
-print("\n\n============== PRÓXIMO ===============")
+print("\n\n============== FORMATANDO O TELEFONE ===============")
+
+dados_numero_formatado = (
+    dados["numero"].str.replace(r"\D", "", regex=True)
+)
+
+dados.insert(5, "numero_formatado", dados_numero_formatado)
+#dados["numero_validado"] = (dados['numero_formatado'].str.fullmatch(r"\d{10,11}"))
+dados.insert(6, "numero_validado", dados["numero_formatado"].str.fullmatch(r"\d{11}"))
+
+print(dados.to_string(index=False))
 
 
 
+print("\n\n============== FORMATANDO O SALÁRIO ===============")
+
+dados_salario_formatados = (dados["salario"]
+                              .str.replace(r"[^\d,.\-]", "", regex=True)
+                              .str.replace(r"\.(?=\d{3}(?:\.|,|$))", "", regex=True)
+                              .str.replace(r",",".", regex=False)
+                              .astype(float)
+                              )
+
+dados.insert(8, "salario_formatado",dados_salario_formatados)
+print(dados["salario_formatado"])
+
+#print(dados["salario_formatado"].sum())
+print(dados.to_string(index=False))
 
 
-print("\n\n============== PRÓXIMO ===============")
+print("\n\n============== ADICIONANDO COLUNA SALÁRIO ANUAL ===============")
 
 
+dados_salario_anual = (dados["salario_formatado"] * 12                              )
+
+dados.insert(9, "salario_anual",dados_salario_anual)
+#print(dados["salario_formatado"])
+
+#print(dados["salario_formatado"].sum())
+print(dados.to_string(index=False))
 
 
-print("\n\n============== PRÓXIMO ===============")
+print("\n\n============== ATUALIZANDO O ARQUIVO 'DADOS_PADRONIZADOS.CSV' ===============")
 
-
-
-
-
-print("\n\n============== PRÓXIMO ===============")
-
-
-
-
-
-
-print("\n\n============== PRÓXIMO ===============")
-
+df = pd.read_csv(
+    "dados_padronizados.csv",
+    sep=None,
+    engine="python",
+    dtype=str,
+    encoding="utf-8-sig")
+df.to_csv("dados_padronizados.csv",sep=";",index=False)
+print("\nO arquivo foi atulizado com sucesso!")
