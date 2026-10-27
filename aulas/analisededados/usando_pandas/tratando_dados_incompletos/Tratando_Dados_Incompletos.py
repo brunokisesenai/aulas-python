@@ -5,19 +5,22 @@ df_dados_incompletos = pd.DataFrame([
         "nome": "João de Menezes",
         "cpf": "12345678978",
         "salario": "asd asdasdasdvadvas",
-        "telefone": "# $ *(){"
+        "telefone": "# $ *(){",
+        'modelo de trabalho': "presencial"
     },
     {
         "nome": "Victor Sousa",
         "cpf": 11122233344,
         "salario": "5.000,88",
-        "telefone": "+55 62 12345-1234"
+        "telefone": "+55 62 12345-1234",
+        'modelo de trabalho': "híbrido"
     },
     {
         "nome": "Marcelo Oliveira",
         "cpf": "000 333 333-99",
         "salario": 1000.9900,
-        "telefone": "63 1111-1111"
+        "telefone": "63 1111-1111",
+        'modelo de trabalho': ""
     }
 ])
 
