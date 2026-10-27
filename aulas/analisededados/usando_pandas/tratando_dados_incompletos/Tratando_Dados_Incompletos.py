@@ -55,6 +55,12 @@ dados_telefone_formatados = (
 dados.insert(7, "telefone_formatado", dados_telefone_formatados)
 dados["telefone_validado"] = (dados['telefone_formatado'].str.fullmatch(r"\d{10,11}"))
 
-print(dados.to_string())
+#print(dados.to_string())
+
+dados['salario_formatado'] = dados["salario_formatado"].fillna(0.0)
+print(dados[["cpf_formatado", "telefone_formatado", "salario_formatado"]])
+
+
+
 
 dados.to_csv("dados_incompletos_teste.csv", index=False)
