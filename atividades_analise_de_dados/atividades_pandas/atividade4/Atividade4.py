@@ -24,8 +24,8 @@ dados_preco_formatado = (df["preco"]
                               )
 dados_preco_formatado = pd.to_numeric(dados_preco_formatado, errors="coerce")
 df.insert(2, "preco_formatado",dados_preco_formatado)
-df["preco_formatado"] = df["preco_formatado"].fillna(0.0)
-
+media_precos = df["preco_formatado"].mean()
+df["preco_formatado"] = df["preco_formatado"].fillna(media_precos)
 
 print(df.to_string(index=False))
 
